@@ -1,0 +1,41 @@
+#using loop
+string = "Hello, World!"
+reversed_string = ""
+for char in string:
+    reversed_string = char + reversed_string
+print(reversed_string)
+
+# using revered()
+
+string = "Hello, World!"
+reversed_string = "".join(reversed(string))
+print(reversed_string)
+
+# using recursion
+def reverse_string(s):
+    if len(s) == 0:
+        return s
+    return s[-1] + reverse_string(s[:-1])
+
+string = "Hello, World!"
+print(reverse_string(string))
+
+# using stack (list)
+string = "Hello, World!"
+stack = list(string)
+reversed_string = ""
+while stack:
+    reversed_string += stack.pop()
+print(reversed_string)
+
+# using function
+from functools import reduce
+
+string = "Hello, World!"
+reversed_string = reduce(lambda x, y: y + x, string)
+print(reversed_string)
+
+# using list comprehension
+string = "Hello, World!"
+reversed_string = "".join([string[i] for i in range(len(string)-1, -1, -1)])
+print(reversed_string)
